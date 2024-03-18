@@ -3,7 +3,7 @@ export class GuiModel {
 
     private _guiModel = {
         "application": {
-            "title": "DevOpsDemo FS2024",
+            "title": "David Vocat Demo App",
             "formList": [
                 {
                     "id": "OwnUserForm",
@@ -107,6 +107,23 @@ export class GuiModel {
                             "width": 2,
                             "newRow": true,
                         },
+                        {
+                            "type": "button",
+                            "name": { default: "Wiki" },
+                            "icon": "wikipedia-w",
+                            "color": "carrot",
+                            "page": "wikiPage",
+                            "width": 2,
+                            "newRow": true,
+                        },
+                    ]
+                },
+                {
+                    "id": "wikiPage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        }
                     ]
                 },
                 {
