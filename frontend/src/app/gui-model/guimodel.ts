@@ -30,7 +30,7 @@ export class GuiModel {
                             "width": 2
                         },
                         {
-                            "type": 'okButton',
+                            "type": "okButton",
                             "name": "Ok"
                         }
                     ]
