@@ -5,7 +5,6 @@ pipeline {
             steps {
                 checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SaveTheDave42/ZHAW_DevOpsDemo']])
                 sh 'echo checkout'
-            
             }
         }
         stage('Test') { 
@@ -20,12 +19,16 @@ pipeline {
         }
         stage('Save to GitHub') { 
             steps {
-                sh 'git config --global user.email "rappldav@students.zhaw.ch"'
-                sh 'git config --global user.name "David Vocat"'
-                sh 'git checkout main'
-                sh 'git add -A'
-                sh 'git diff-index --quiet HEAD || git commit -m "Jenkins build"'
-                sh 'git push origin main'
+                withCredentials([string(credentialsId: 'GithubAccessToken', variable: 'GITHUB_TOKEN')]) {
+                    sh '''
+                        git config --global user.email "rappldav@students.zhaw.ch"
+                        git config --global user.name "David Vocat"
+                        git checkout main
+                        git add -A
+                        git diff-index --quiet HEAD || git commit -m "Jenkins build"
+                        git push https://${GITHUB_TOKEN}@github.com/SaveTheDave42/ZHAW_DevOpsDemo.git
+                    '''
+                }
             }
         }
     }
