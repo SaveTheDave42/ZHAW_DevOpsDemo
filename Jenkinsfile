@@ -22,9 +22,10 @@ pipeline {
             steps {
                 sh 'git config --global user.email "rappldav@students.zhaw.ch"'
                 sh 'git config --global user.name "David Vocat"'
+                sh 'git checkout main'
                 sh 'git add -A'
                 sh 'git diff-index --quiet HEAD || git commit -m "Jenkins build"'
-                sh 'git push'
+                sh 'git push origin main'
             }
         }
     }
