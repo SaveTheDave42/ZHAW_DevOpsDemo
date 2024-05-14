@@ -116,6 +116,15 @@ export class GuiModel {
                             "width": 2,
                             "newRow": true,
                         },
+                        {
+                            "type": "button",
+                            "name": { default: "Test" },
+                            "icon": "fa-file-alt",
+                            "color": "wet-asphalt",
+                            "page": "testPage",
+                            "width": 2,
+                            "newRow": true,
+                        },
                     ]
                 },
                 {
@@ -126,6 +135,19 @@ export class GuiModel {
                         }
                     ]
                 },
+                {
+                    "id": "testPage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "label",
+                            "value": "testing azure deployment via github actions",
+                            "newRow": true
+                        }
+                    ]
+                },                
                 {
                     "id": "toDoPage",
                     "elementList": [
