@@ -109,7 +109,7 @@ export class GuiModel {
                         },
                         {
                             "type": "button",
-                            "name": { default: "Wiki 2" },
+                            "name": { default: "Wiki Test" },
                             "icon": "wikipedia-w",
                             "color": "carrot",
                             "page": "wikiPage",
